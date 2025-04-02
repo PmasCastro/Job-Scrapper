@@ -1,12 +1,11 @@
 import ollama
-from bs4 import BeautifulSoup
 from IPython.display import Markdown, display, update_display
 
-MODEL_LLAMA = 'llama3.2'
+
+MODEL_LLAMA = 'llama3.2' 
 
 question = """
-Please explain what this code does and why:
-yield from {book.get("author") for book in books if book.get("author")}
+
 """
 
 system_prompt = "You are a very intelligent and helpful AI that is extremly good at helping programming beginners"
@@ -22,6 +21,3 @@ messages = [
 response = ollama.chat(model=MODEL_LLAMA, messages=messages)
 reply = response['message']['content']
 print (reply)
-
-
-
